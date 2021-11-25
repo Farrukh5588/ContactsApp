@@ -8,7 +8,7 @@ namespace ContactsApp
 {
 
     /// <summary>
-    /// Класс, содержащий лист всех контактов
+    /// Класс содержит список всех контактов.
     /// </summary>
     public class Project
     {
