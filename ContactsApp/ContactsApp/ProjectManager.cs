@@ -58,21 +58,30 @@ namespace ContactsApp
         public static Project LoadFromFile(string filepath)
         {
             Project project;
+
             if (!File.Exists(filepath))
             {
                 return new Project();
             }
+
             var serializer = new JsonSerializer();
             try
             {
                 using (var streamreader = new StreamReader(filepath))
-                using (JsonReader reader = new JsonTextReader(streamreader))
+                using (var reader = new JsonTextReader(streamreader))
                     project = serializer.Deserialize<Project>(reader);
             }
+
             catch
             {
                 return new Project();
             }
+
+            if (project == null)
+            {
+                return new Project();
+            }
+
             return project;
         }
     }

@@ -80,21 +80,21 @@ namespace ContactsApp
         /// Первая буква - заглавная  
         /// Ограничение 50 символами по длине строки.
         /// </summary>
-        /// <param name="intials"></param>
+        /// <param name="initials"></param>
         /// <returns></returns>
-        public static string WordInput(string intials)
+        public static string WordInput(string initials, string propertyName)
         {
-            if (intials.Length > 50)
+            if (initials.Length > 50)
             {
-                throw new ArgumentException("Surname must not exceed 50 characters");
+                throw new ArgumentException($"{propertyName}Surname must not exceed 50 characters");
             }
 
-            if (intials.Length == 0)
+            if (initials.Length == 0)
             {
-                throw new ArgumentException("Name is not entered");
+                throw new ArgumentException($"{propertyName} is not entered");
             }
-            intials = char.ToUpper(intials[0]) + intials.Substring(1);
-            return intials;
+            initials = char.ToUpper(initials[0]) + initials.Substring(1);
+            return initials;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace ContactsApp
             } 
             set
             {
-                _surname = WordInput(value);
+                _surname = WordInput(value, nameof(Surname));
             }
         }
 
@@ -123,7 +123,7 @@ namespace ContactsApp
             }
             set
             {
-                _name = WordInput(value);
+                _name = WordInput(value, nameof(Name));
             }
         }
 
