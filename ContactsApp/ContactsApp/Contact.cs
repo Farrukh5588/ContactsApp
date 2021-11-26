@@ -149,7 +149,7 @@ namespace ContactsApp
         /// <summary>
         /// Возвращает и задаёт номер телефона.
         /// </summary>
-        public PhoneNumber _phoneNumber { get; set; }
+        public PhoneNumber PhoneNumber { get; set; }
 
         /// <summary>
         /// Конструктор класса с 6 входными параметрами.
@@ -163,7 +163,7 @@ namespace ContactsApp
         public Contact(long phoneNumber, string name, string surname, string email, DateTime dateOfBirth,
             string idVk)
         {
-            this._phoneNumber.Number = phoneNumber;
+            this.PhoneNumber.Number = phoneNumber;
             Name = name;
             Surname = surname;
             Email = email;
@@ -177,7 +177,7 @@ namespace ContactsApp
         /// <returns>Возвращает объект - клон контакта, с полями: номер телефона, имя, фамилия, емейл, дата рождения, айди вк.</returns>
         public object Clone()
         {
-            return new Contact(_phoneNumber.Number, Name, Surname, Email, DateOfBirth, IdVk);
+            return new Contact(PhoneNumber.Number, Name, Surname, Email, DateOfBirth, IdVk);
         }
     }
 }
