@@ -38,7 +38,6 @@ namespace ContactsApp
 
         /// <summary>
         /// Свойство даты рождения.
-        /// Дата рождения не может быть более текущей даты и не может быть менее 1900 года.
         /// </summary>
         public DateTime DateOfBirth
         {
@@ -59,7 +58,6 @@ namespace ContactsApp
 
         /// <summary>
         /// Свойство ID Вконтакте.
-        /// ID Вконтакте ограничен 30 символами по длине.
         /// </summary>
         public string IdVk
         {
@@ -86,7 +84,6 @@ namespace ContactsApp
         /// <returns></returns>
         public static string WordInput(string intials)
         {
-          
             if (intials.Length > 50)
             {
                 throw new ArgumentException("Surname must not exceed 50 characters");
@@ -132,7 +129,6 @@ namespace ContactsApp
 
         /// <summary>
         /// Свойство е-мейла.
-        /// Емейл ограничен 50 символами по длине.
         /// </summary>
         public string Email
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ContactsApp
 {
     /// <summary>
-    /// Класс, со свойствами номера.
+    /// Класс описывающий номера.
     /// </summary>
     public class PhoneNumber
     {
@@ -18,7 +18,6 @@ namespace ContactsApp
 
         /// <summary>
         /// Свойство номера телефона.
-        /// Поле должно быть числовым и содержать ровно 11 цифр. Первая цифра должна быть ‘7’.
         /// </summary>
         public long Number
         {
@@ -28,7 +27,6 @@ namespace ContactsApp
             }
             set
             {
-
                 if (value.ToString().Length != 11 || value.ToString()[0] != '7')
                 {
                     throw new ArgumentException(message: "Phone number must start with 7 and be 11 digits long");

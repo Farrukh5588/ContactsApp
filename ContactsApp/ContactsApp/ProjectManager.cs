@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 namespace ContactsApp
 {
     /// <summary>
-    /// Класс, реализующий сохранение данных в файл и загрузки из него.
+    /// Класс описывающий сохранение данных в файл и загрузки из него.
     /// </summary>
     public class ProjectManager
     {
@@ -44,8 +44,8 @@ namespace ContactsApp
                 Directory.CreateDirectory(directoryPath);
             }
             var serializer = new JsonSerializer();
-            using (var sw = new StreamWriter(filePath))
-            using (JsonWriter writer = new JsonTextWriter(sw))
+            using (var streamwriter = new StreamWriter(filePath))
+            using (JsonWriter writer = new JsonTextWriter(streamwriter))
             {
                 serializer.Serialize(writer, data);
             }
@@ -65,8 +65,8 @@ namespace ContactsApp
             var serializer = new JsonSerializer();
             try
             {
-                using (var sr = new StreamReader(filepath))
-                using (JsonReader reader = new JsonTextReader(sr))
+                using (var streamreader = new StreamReader(filepath))
+                using (JsonReader reader = new JsonTextReader(streamreader))
                     project = serializer.Deserialize<Project>(reader);
             }
             catch
