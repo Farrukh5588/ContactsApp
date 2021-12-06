@@ -70,14 +70,13 @@ namespace ContactsApp
                 using (var streamreader = new StreamReader(filepath))
                 using (var reader = new JsonTextReader(streamreader))
                     project = serializer.Deserialize<Project>(reader);
+                if (project == null)
+                {
+                    return new Project();
+                }
             }
 
             catch
-            {
-                return new Project();
-            }
-
-            if (project == null)
             {
                 return new Project();
             }
