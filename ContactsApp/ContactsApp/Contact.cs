@@ -86,7 +86,7 @@ namespace ContactsApp
         {
             if (initials.Length > 50)
             {
-                throw new ArgumentException($"{propertyName}Surname must not exceed 50 characters");
+                throw new ArgumentException($"{propertyName} must not exceed 50 characters");
             }
 
             if (initials.Length == 0)
@@ -152,32 +152,39 @@ namespace ContactsApp
         public PhoneNumber PhoneNumber { get; set; }
 
         /// <summary>
-        /// Конструктор класса с 6 входными параметрами.
-        /// </summary>
-        /// <param name="phoneNumber"></param> Номер телефона контакта.
-        /// <param name="name"></param> Имя контакта.
-        /// <param name="surname"></param> Фамилия контакта.
-        /// <param name="email"></param> E-mail контакта.
-        /// <param name="dateOfBirth"></param> Дата рождения контакта.
-        /// <param name="idVk"></param> ID Vk контакта.
-        public Contact(long phoneNumber, string name, string surname, string email, DateTime dateOfBirth,
-            string idVk)
-        {
-            this.PhoneNumber.Number = phoneNumber;
-            Name = name;
-            Surname = surname;
-            Email = email;
-            DateOfBirth = dateOfBirth;
-            IdVk = idVk;
-        }
-        
-        /// <summary>
         /// Реализация клонирования
         /// </summary>
         /// <returns>Возвращает объект - клон контакта, с полями: номер телефона, имя, фамилия, емейл, дата рождения, айди вк.</returns>
         public object Clone()
         {
-            return new Contact(PhoneNumber.Number, Name, Surname, Email, DateOfBirth, IdVk);
+            var phoneNumber = new PhoneNumber { Number = PhoneNumber.Number };
+            return new Contact
+            {
+                Surname = Surname,
+                Name = Name,
+                DateOfBirth = DateOfBirth,
+                Email = Email,
+                IdVk = IdVk,
+                PhoneNumber = phoneNumber
+            };
+        }
+        /// <summary>Determines whether the specified object is equal to the current object.</summary>
+        /// <param name="obj">The object to compare with the current object.</param>
+        /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>
+        public override bool Equals(object obj)
+        {
+            var toCompareWith = obj as Contact;
+            if (toCompareWith == null)
+            {
+                return false;
+            }
+
+            return Name == toCompareWith.Name &&
+                   Surname == toCompareWith.Surname &&
+                   PhoneNumber.Number == toCompareWith.PhoneNumber.Number &&
+                   IdVk == toCompareWith.IdVk &&
+                   Email == toCompareWith.Email &&
+                   DateOfBirth == toCompareWith.DateOfBirth;
         }
     }
 }
