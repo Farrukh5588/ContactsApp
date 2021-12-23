@@ -26,7 +26,6 @@ namespace ContactsAppUI
         /// <summary>
         /// Путь к файлу.
         /// </summary>
-
         private readonly string _filePath = ProjectManager.FilePath();
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace ContactsAppUI
         {
             InitializeComponent();
         }
-
 
         /// <summary>
         /// Изменение текста в поле поиска.
@@ -59,6 +57,9 @@ namespace ContactsAppUI
             }
         }
 
+        /// <summary>
+        /// Загрузка данных.
+        /// </summary>
         private void MainForm_Load(object sender, EventArgs e)
         {
             _project = ProjectManager.LoadFromFile(_filePath);
@@ -90,6 +91,7 @@ namespace ContactsAppUI
             idVkTextBox.Text = contacts[index].IdVk;
             birthDateBox.Text = contacts[index].DateOfBirth.ToString("dd.MM.yyyy");
         }
+
         /// <summary>
         /// Вывод контактов у которых день рождения.
         /// </summary>
@@ -123,6 +125,7 @@ namespace ContactsAppUI
                 ClearContactsView();
             }
         }
+
         /// <summary>
         /// Очищения полей для вывода контакта.
         /// </summary>
@@ -135,6 +138,7 @@ namespace ContactsAppUI
             idVkTextBox.Text = "";
             birthDateBox.Text = "";
         }
+
         /// <summary>
         /// Добавление контакта.
         /// </summary>
@@ -152,6 +156,7 @@ namespace ContactsAppUI
             UpdateContactsList(contactForm.Contact);
             ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
+
         /// <summary>
         /// Редактирование контакта.
         /// </summary>
@@ -180,6 +185,10 @@ namespace ContactsAppUI
                 ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
             }
         }
+
+        /// <summary>
+        /// Удаление контакта
+        /// </summary>
         private void DeleteContact()
         {
             if (ContactsListBox.SelectedIndex == -1)
@@ -206,6 +215,7 @@ namespace ContactsAppUI
                 }
             }
         }
+
         /// <summary>
         /// Вызов окна About.
         /// </summary>
@@ -292,7 +302,5 @@ namespace ContactsAppUI
         {
             ProjectManager.SaveToFile(_project, _filePath, _directoryPath);
         }
-
-        
     }
 }

@@ -11,9 +11,13 @@ using ContactsApp;
 
 namespace ContactsAppUI
 {
+    /// <summary>
+    /// Класс добавления и редактирования контакта
+    /// </summary>
     public partial class ContactOperationsForm : Form
     {
         private Contact _contact;
+
         /// <summary>
         /// Временный проект для добавления или редактирования контакта.
         /// </summary>
@@ -96,7 +100,11 @@ namespace ContactsAppUI
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// Изменение цвета при попытке неправильного ввода данных Фамилия
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void surnameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -112,6 +120,9 @@ namespace ContactsAppUI
             }         
         }
 
+        /// <summary>
+        /// Изменение цвета при попытке неправильного ввода данных Имя
+        /// </summary>
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -127,6 +138,9 @@ namespace ContactsAppUI
             }
         }
 
+        /// <summary>
+        /// Изменение цвета при попытке неправильного ввода данных Email
+        /// </summary>
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
             try
