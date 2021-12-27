@@ -52,6 +52,7 @@ namespace ContactsApp
                     throw new ArgumentException(@"Date of birth cannot be more than 
                     the current date and cannot be less than 1900");
                 }
+
                 _dateOfBirth = value;
             }
         }
@@ -71,6 +72,7 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("ID_vk must not exceed 30 characters");
                 }
+
                 _idVk = value;
             }
         }
@@ -93,6 +95,7 @@ namespace ContactsApp
             {
                 throw new ArgumentException($"{propertyName} is not entered");
             }
+
             initials = char.ToUpper(initials[0]) + initials.Substring(1);
             return initials;
         }
@@ -142,6 +145,7 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("e-mail must not exceed 50 characters");
                 }
+
                 _email = value;
             }
         }
@@ -168,6 +172,7 @@ namespace ContactsApp
                 PhoneNumber = phoneNumber
             };
         }
+
         /// <summary>Determines whether the specified object is equal to the current object.</summary>
         /// <param name="obj">The object to compare with the current object.</param>
         /// <returns>true if the specified object  is equal to the current object; otherwise, false.</returns>

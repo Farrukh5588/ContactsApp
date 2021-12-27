@@ -57,10 +57,10 @@ namespace ContactsAppUI
             this.label2 = new System.Windows.Forms.Label();
             this.birthContactsLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.deletebutton = new System.Windows.Forms.Button();
-            this.editbutton = new System.Windows.Forms.Button();
-            this.addbutton = new System.Windows.Forms.Button();
             this.birthDateBox = new System.Windows.Forms.TextBox();
+            this.DeleteNoteButton = new System.Windows.Forms.Button();
+            this.EditNoteButton = new System.Windows.Forms.Button();
+            this.AddNoteButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,7 +111,7 @@ namespace ContactsAppUI
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -128,21 +128,21 @@ namespace ContactsAppUI
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addContactToolStripMenuItem.Text = "Add Contact";
             this.addContactToolStripMenuItem.Click += new System.EventHandler(this.addContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
             // 
             // deleteContactToolStripMenuItem
             // 
             this.deleteContactToolStripMenuItem.Name = "deleteContactToolStripMenuItem";
-            this.deleteContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteContactToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteContactToolStripMenuItem.Text = "Delete Contact";
             this.deleteContactToolStripMenuItem.Click += new System.EventHandler(this.deleteContactToolStripMenuItem_Click);
             // 
@@ -157,7 +157,7 @@ namespace ContactsAppUI
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -165,8 +165,8 @@ namespace ContactsAppUI
             // 
             this.surnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.surnameTextBox.Location = new System.Drawing.Point(532, 40);
-            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.surnameTextBox.Location = new System.Drawing.Point(531, 40);
+            this.surnameTextBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.Size = new System.Drawing.Size(225, 23);
             this.surnameTextBox.TabIndex = 4;
@@ -175,7 +175,7 @@ namespace ContactsAppUI
             // 
             this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameTextBox.Location = new System.Drawing.Point(532, 74);
+            this.nameTextBox.Location = new System.Drawing.Point(531, 79);
             this.nameTextBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(225, 23);
@@ -185,7 +185,7 @@ namespace ContactsAppUI
             // 
             this.phoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.phoneTextBox.Location = new System.Drawing.Point(532, 146);
+            this.phoneTextBox.Location = new System.Drawing.Point(531, 151);
             this.phoneTextBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(225, 23);
@@ -195,7 +195,7 @@ namespace ContactsAppUI
             // 
             this.emailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.emailTextBox.Location = new System.Drawing.Point(532, 184);
+            this.emailTextBox.Location = new System.Drawing.Point(531, 189);
             this.emailTextBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(225, 23);
@@ -205,7 +205,7 @@ namespace ContactsAppUI
             // 
             this.idVkTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.idVkTextBox.Location = new System.Drawing.Point(532, 220);
+            this.idVkTextBox.Location = new System.Drawing.Point(531, 225);
             this.idVkTextBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.idVkTextBox.Name = "idVkTextBox";
             this.idVkTextBox.Size = new System.Drawing.Size(225, 23);
@@ -216,7 +216,7 @@ namespace ContactsAppUI
             this.sernamelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sernamelabel.AutoSize = true;
-            this.sernamelabel.Location = new System.Drawing.Point(466, 43);
+            this.sernamelabel.Location = new System.Drawing.Point(462, 43);
             this.sernamelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.sernamelabel.Name = "sernamelabel";
             this.sernamelabel.Size = new System.Drawing.Size(57, 15);
@@ -228,19 +228,19 @@ namespace ContactsAppUI
             this.DOBlabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DOBlabel.AutoSize = true;
-            this.DOBlabel.Location = new System.Drawing.Point(443, 115);
+            this.DOBlabel.Location = new System.Drawing.Point(441, 120);
             this.DOBlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DOBlabel.Name = "DOBlabel";
-            this.DOBlabel.Size = new System.Drawing.Size(75, 15);
+            this.DOBlabel.Size = new System.Drawing.Size(78, 15);
             this.DOBlabel.TabIndex = 12;
-            this.DOBlabel.Text = "Date Of Birth";
+            this.DOBlabel.Text = "Date Of Birth:";
             // 
             // phonelabel
             // 
             this.phonelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.phonelabel.AutoSize = true;
-            this.phonelabel.Location = new System.Drawing.Point(474, 149);
+            this.phonelabel.Location = new System.Drawing.Point(475, 154);
             this.phonelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.phonelabel.Name = "phonelabel";
             this.phonelabel.Size = new System.Drawing.Size(44, 15);
@@ -252,31 +252,31 @@ namespace ContactsAppUI
             this.emaillabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.emaillabel.AutoSize = true;
-            this.emaillabel.Location = new System.Drawing.Point(471, 187);
+            this.emaillabel.Location = new System.Drawing.Point(475, 192);
             this.emaillabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.emaillabel.Name = "emaillabel";
-            this.emaillabel.Size = new System.Drawing.Size(50, 15);
+            this.emaillabel.Size = new System.Drawing.Size(44, 15);
             this.emaillabel.TabIndex = 14;
-            this.emaillabel.Text = "E - mail:";
+            this.emaillabel.Text = "E-mail:";
             // 
             // vklabel
             // 
             this.vklabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.vklabel.AutoSize = true;
-            this.vklabel.Location = new System.Drawing.Point(480, 223);
+            this.vklabel.Location = new System.Drawing.Point(482, 228);
             this.vklabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vklabel.Name = "vklabel";
-            this.vklabel.Size = new System.Drawing.Size(38, 15);
+            this.vklabel.Size = new System.Drawing.Size(37, 15);
             this.vklabel.TabIndex = 15;
-            this.vklabel.Text = "Vk_id:";
+            this.vklabel.Text = "ID Vk:";
             // 
             // namelabel
             // 
             this.namelabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.namelabel.AutoSize = true;
-            this.namelabel.Location = new System.Drawing.Point(478, 77);
+            this.namelabel.Location = new System.Drawing.Point(477, 82);
             this.namelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.namelabel.Name = "namelabel";
             this.namelabel.Size = new System.Drawing.Size(42, 15);
@@ -337,59 +337,59 @@ namespace ContactsAppUI
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // deletebutton
-            // 
-            this.deletebutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.deletebutton.BackgroundImage = global::ContactsAppUI.Properties.Resources.icons8_удалить_свойство_301;
-            this.deletebutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.deletebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deletebutton.Location = new System.Drawing.Point(97, 425);
-            this.deletebutton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.deletebutton.Name = "deletebutton";
-            this.deletebutton.Size = new System.Drawing.Size(30, 30);
-            this.deletebutton.TabIndex = 20;
-            this.deletebutton.UseVisualStyleBackColor = true;
-            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
-            // 
-            // editbutton
-            // 
-            this.editbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.editbutton.BackColor = System.Drawing.SystemColors.Window;
-            this.editbutton.BackgroundImage = global::ContactsAppUI.Properties.Resources.icons8_редактировать_свойство_30;
-            this.editbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.editbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editbutton.Location = new System.Drawing.Point(57, 425);
-            this.editbutton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.editbutton.Name = "editbutton";
-            this.editbutton.Size = new System.Drawing.Size(30, 30);
-            this.editbutton.TabIndex = 19;
-            this.editbutton.UseVisualStyleBackColor = false;
-            this.editbutton.Click += new System.EventHandler(this.editbutton_Click);
-            // 
-            // addbutton
-            // 
-            this.addbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addbutton.BackColor = System.Drawing.SystemColors.Window;
-            this.addbutton.BackgroundImage = global::ContactsAppUI.Properties.Resources.icons8_добавить_свойство_30;
-            this.addbutton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addbutton.Location = new System.Drawing.Point(17, 425);
-            this.addbutton.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.addbutton.Name = "addbutton";
-            this.addbutton.Size = new System.Drawing.Size(30, 30);
-            this.addbutton.TabIndex = 18;
-            this.addbutton.UseVisualStyleBackColor = false;
-            this.addbutton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
             // birthDateBox
             // 
             this.birthDateBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.birthDateBox.Location = new System.Drawing.Point(532, 112);
+            this.birthDateBox.Location = new System.Drawing.Point(531, 117);
             this.birthDateBox.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.birthDateBox.Name = "birthDateBox";
             this.birthDateBox.Size = new System.Drawing.Size(225, 23);
             this.birthDateBox.TabIndex = 22;
+            // 
+            // DeleteNoteButton
+            // 
+            this.DeleteNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.DeleteNoteButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DeleteNoteButton.FlatAppearance.BorderSize = 0;
+            this.DeleteNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("DeleteNoteButton.Image")));
+            this.DeleteNoteButton.Location = new System.Drawing.Point(85, 424);
+            this.DeleteNoteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DeleteNoteButton.Name = "DeleteNoteButton";
+            this.DeleteNoteButton.Size = new System.Drawing.Size(30, 30);
+            this.DeleteNoteButton.TabIndex = 25;
+            this.DeleteNoteButton.UseVisualStyleBackColor = true;
+            this.DeleteNoteButton.Click += new System.EventHandler(this.DeleteNoteButton_Click);
+            // 
+            // EditNoteButton
+            // 
+            this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditNoteButton.FlatAppearance.BorderSize = 0;
+            this.EditNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("EditNoteButton.Image")));
+            this.EditNoteButton.Location = new System.Drawing.Point(51, 424);
+            this.EditNoteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EditNoteButton.Name = "EditNoteButton";
+            this.EditNoteButton.Size = new System.Drawing.Size(30, 30);
+            this.EditNoteButton.TabIndex = 24;
+            this.EditNoteButton.UseVisualStyleBackColor = true;
+            this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
+            // 
+            // AddNoteButton
+            // 
+            this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddNoteButton.FlatAppearance.BorderSize = 0;
+            this.AddNoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddNoteButton.Image = ((System.Drawing.Image)(resources.GetObject("AddNoteButton.Image")));
+            this.AddNoteButton.Location = new System.Drawing.Point(17, 424);
+            this.AddNoteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddNoteButton.Name = "AddNoteButton";
+            this.AddNoteButton.Size = new System.Drawing.Size(30, 30);
+            this.AddNoteButton.TabIndex = 23;
+            this.AddNoteButton.UseVisualStyleBackColor = true;
+            this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
             // 
             // MainForm
             // 
@@ -397,11 +397,11 @@ namespace ContactsAppUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.DeleteNoteButton);
+            this.Controls.Add(this.EditNoteButton);
+            this.Controls.Add(this.AddNoteButton);
             this.Controls.Add(this.birthDateBox);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.deletebutton);
-            this.Controls.Add(this.editbutton);
-            this.Controls.Add(this.addbutton);
             this.Controls.Add(this.ContactsListBox);
             this.Controls.Add(this.namelabel);
             this.Controls.Add(this.vklabel);
@@ -461,14 +461,14 @@ namespace ContactsAppUI
         private System.Windows.Forms.Label vklabel;
         private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.ListBox ContactsListBox;
-        private System.Windows.Forms.Button addbutton;
-        private System.Windows.Forms.Button editbutton;
-        private System.Windows.Forms.Button deletebutton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label birthContactsLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox birthDateBox;
+        private System.Windows.Forms.Button DeleteNoteButton;
+        private System.Windows.Forms.Button EditNoteButton;
+        private System.Windows.Forms.Button AddNoteButton;
     }
 }
 

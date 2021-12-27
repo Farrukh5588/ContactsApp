@@ -14,7 +14,7 @@ namespace ContactsAppUI
     /// <summary>
     /// Класс добавления и редактирования контакта
     /// </summary>
-    public partial class ContactOperationsForm : Form
+    public partial class ContactForm : Form
     {
         private Contact _contact;
 
@@ -33,10 +33,11 @@ namespace ContactsAppUI
                 emailTextBox.Text = value.Email;
                 if (value.PhoneNumber.Number != 0)
                     phoneTextBox.Text = value.PhoneNumber.Number.ToString();
-                DOBPicker.Value = value.DateOfBirth;
+                DateOfBirthPicker.Value = value.DateOfBirth;
             }
         }
-        public ContactOperationsForm()
+
+        public ContactForm()
         {
             InitializeComponent();
         }
@@ -48,6 +49,7 @@ namespace ContactsAppUI
         {
             NewContact();
         }
+
         /// <summary>
         /// Создание контакта для добавления или редактирования.
         /// </summary>
@@ -59,14 +61,16 @@ namespace ContactsAppUI
                 Contact.Name = nameTextBox.Text;
                 Contact.IdVk = idVkTextBox.Text;
                 Contact.Email = emailTextBox.Text;
-                Contact.DateOfBirth = DOBPicker.Value;
+                Contact.DateOfBirth = DateOfBirthPicker.Value;
                 var phoneNumber = new PhoneNumber
                 {
                     Number = phoneTextBox.Text != "" ? Convert.ToInt64(phoneTextBox.Text) : 0
                 };
+
                 Contact.PhoneNumber = phoneNumber;
                 DialogResult = DialogResult.OK;
             }
+
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message, @"Error",
@@ -93,6 +97,7 @@ namespace ContactsAppUI
             {
                 return;
             }
+
             var dialogAnswer = MessageBox.Show(@"The entered data will not be saved.",
                 @"Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (dialogAnswer == DialogResult.No)
@@ -100,6 +105,7 @@ namespace ContactsAppUI
                 e.Cancel = true;
             }
         }
+
         /// <summary>
         /// Изменение цвета при попытке неправильного ввода данных Фамилия
         /// </summary>
@@ -110,11 +116,11 @@ namespace ContactsAppUI
             try
             {
                 var surname = new Contact();
-                surname.Name = surnameTextBox.Text;
+                surname.Surname = surnameTextBox.Text;
                 surnameTextBox.BackColor = Color.White;
             }
 
-            catch (Exception)
+            catch (ArgumentException exeption)
             {
                 surnameTextBox.BackColor = Color.LightSalmon;
             }         
@@ -132,7 +138,7 @@ namespace ContactsAppUI
                 nameTextBox.BackColor = Color.White;
             }
 
-            catch (Exception)
+            catch (ArgumentException exeption)
             {
                 nameTextBox.BackColor = Color.LightSalmon;
             }
@@ -146,13 +152,44 @@ namespace ContactsAppUI
             try
             {
                 var email = new Contact();
-                email.Name = emailTextBox.Text;
+                email.Email = emailTextBox.Text;
                 emailTextBox.BackColor = Color.White;
             }
 
-            catch (Exception)
+            catch (ArgumentException exeption)
             {
                 emailTextBox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void phoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                long number;
+                long.TryParse(phoneTextBox.Text, out number);
+                _contact.PhoneNumber.Number = number;
+                phoneTextBox.BackColor = Color.White;
+            }
+
+            catch (ArgumentException exeption)
+            {
+                phoneTextBox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void idVkTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var IdVk = new Contact();
+                IdVk.IdVk = idVkTextBox.Text;
+                idVkTextBox.BackColor = Color.White;
+            }
+
+            catch (ArgumentException exeption)
+            {
+                idVkTextBox.BackColor = Color.LightSalmon;
             }
         }
     }

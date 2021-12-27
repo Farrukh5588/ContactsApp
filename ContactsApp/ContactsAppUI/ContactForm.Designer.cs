@@ -1,7 +1,7 @@
 ﻿
 namespace ContactsAppUI
 {
-    partial class ContactOperationsForm
+    partial class ContactForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@ namespace ContactsAppUI
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.idVkTextBox = new System.Windows.Forms.TextBox();
-            this.DOBPicker = new System.Windows.Forms.DateTimePicker();
+            this.DateOfBirthPicker = new System.Windows.Forms.DateTimePicker();
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.okbutton = new System.Windows.Forms.Button();
             this.cancelbutton = new System.Windows.Forms.Button();
@@ -88,12 +88,12 @@ namespace ContactsAppUI
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(35, 142);
+            this.emailLabel.Location = new System.Drawing.Point(41, 142);
             this.emailLabel.Margin = new System.Windows.Forms.Padding(3, 0, 5, 0);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(44, 13);
+            this.emailLabel.Size = new System.Drawing.Size(38, 13);
             this.emailLabel.TabIndex = 4;
-            this.emailLabel.Text = "E - mail:";
+            this.emailLabel.Text = "E-mail:";
             // 
             // idVkLabel
             // 
@@ -103,7 +103,7 @@ namespace ContactsAppUI
             this.idVkLabel.Name = "idVkLabel";
             this.idVkLabel.Size = new System.Drawing.Size(37, 13);
             this.idVkLabel.TabIndex = 5;
-            this.idVkLabel.Text = "Vk_id:";
+            this.idVkLabel.Text = "ID Vk:";
             // 
             // surnameTextBox
             // 
@@ -121,6 +121,7 @@ namespace ContactsAppUI
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(370, 20);
             this.phoneTextBox.TabIndex = 8;
+            this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -138,14 +139,15 @@ namespace ContactsAppUI
             this.idVkTextBox.Name = "idVkTextBox";
             this.idVkTextBox.Size = new System.Drawing.Size(370, 20);
             this.idVkTextBox.TabIndex = 10;
+            this.idVkTextBox.TextChanged += new System.EventHandler(this.idVkTextBox_TextChanged);
             // 
-            // DOBPicker
+            // DateOfBirthPicker
             // 
-            this.DOBPicker.Location = new System.Drawing.Point(90, 75);
-            this.DOBPicker.Margin = new System.Windows.Forms.Padding(6);
-            this.DOBPicker.Name = "DOBPicker";
-            this.DOBPicker.Size = new System.Drawing.Size(139, 20);
-            this.DOBPicker.TabIndex = 11;
+            this.DateOfBirthPicker.Location = new System.Drawing.Point(90, 75);
+            this.DateOfBirthPicker.Margin = new System.Windows.Forms.Padding(6);
+            this.DateOfBirthPicker.Name = "DateOfBirthPicker";
+            this.DateOfBirthPicker.Size = new System.Drawing.Size(139, 20);
+            this.DateOfBirthPicker.TabIndex = 11;
             // 
             // nameTextBox
             // 
@@ -177,7 +179,7 @@ namespace ContactsAppUI
             this.cancelbutton.UseVisualStyleBackColor = true;
             this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
             // 
-            // ContactOperationsForm
+            // ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +187,7 @@ namespace ContactsAppUI
             this.Controls.Add(this.cancelbutton);
             this.Controls.Add(this.okbutton);
             this.Controls.Add(this.nameTextBox);
-            this.Controls.Add(this.DOBPicker);
+            this.Controls.Add(this.DateOfBirthPicker);
             this.Controls.Add(this.idVkTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.phoneTextBox);
@@ -200,7 +202,7 @@ namespace ContactsAppUI
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(495, 270);
             this.MinimumSize = new System.Drawing.Size(495, 260);
-            this.Name = "ContactOperationsForm";
+            this.Name = "ContactForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add/Edit Contact";
@@ -222,7 +224,7 @@ namespace ContactsAppUI
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox idVkTextBox;
-        private System.Windows.Forms.DateTimePicker DOBPicker;
+        private System.Windows.Forms.DateTimePicker DateOfBirthPicker;
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Button okbutton;
         private System.Windows.Forms.Button cancelbutton;
