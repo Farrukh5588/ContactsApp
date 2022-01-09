@@ -314,5 +314,13 @@ namespace ContactsAppUI
         {
             DeleteContact();
         }
+
+        private void ContactsListBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete) 
+            {
+                DeleteContact();
+            }
+        }
     }
 }

@@ -58,7 +58,6 @@ namespace ContactsApp
         public static Project LoadFromFile(string filepath)
         {
             Project project;
-
             if (!File.Exists(filepath))
             {
                 return new Project();
@@ -67,15 +66,10 @@ namespace ContactsApp
             var serializer = new JsonSerializer();
             try
             {
-                using (var streamreader = new StreamReader(filepath))
-                using (var reader = new JsonTextReader(streamreader))
+                using (var sr = new StreamReader(filepath))
+                using (JsonReader reader = new JsonTextReader(sr))
                     project = serializer.Deserialize<Project>(reader);
-                if (project == null)
-                {
-                    return new Project();
-                }
             }
-
             catch
             {
                 return new Project();

@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NUnit.Framework;
+
+namespace ContactsApp.UnitTest
+{
+    class ProjectTest
+    {
+        [Test]
+        public void Project_CreateProject_ReturnRegulatedProject()
+        {
+            //Setup
+            var sourceNumber = 71234567891;
+            var phoneNumber = new PhoneNumber
+            {
+                Number = sourceNumber
+            };
+
+            var contact = new Contact
+            {
+                Name = "Casper",
+                Surname = "Parker",
+                DateOfBirth = new DateTime(2000, 2, 1),
+                Email = "Casper@gmail.com",
+                IdVk = "22666",
+                PhoneNumber = phoneNumber
+            };
+
+            var sourceProject = new Project();
+
+            //Act
+            sourceProject.Contacts.Add(contact);
+
+            //Assert
+            Assert.IsNotNull(sourceProject);
+        }
+    }
+}

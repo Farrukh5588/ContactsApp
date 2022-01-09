@@ -120,7 +120,7 @@ namespace ContactsAppUI
                 surnameTextBox.BackColor = Color.White;
             }
 
-            catch (ArgumentException exeption)
+            catch (ArgumentException exception)
             {
                 surnameTextBox.BackColor = Color.LightSalmon;
             }         
@@ -138,7 +138,7 @@ namespace ContactsAppUI
                 nameTextBox.BackColor = Color.White;
             }
 
-            catch (ArgumentException exeption)
+            catch (ArgumentException exception)
             {
                 nameTextBox.BackColor = Color.LightSalmon;
             }
@@ -156,7 +156,7 @@ namespace ContactsAppUI
                 emailTextBox.BackColor = Color.White;
             }
 
-            catch (ArgumentException exeption)
+            catch (ArgumentException exception)
             {
                 emailTextBox.BackColor = Color.LightSalmon;
             }
@@ -172,7 +172,7 @@ namespace ContactsAppUI
                 phoneTextBox.BackColor = Color.White;
             }
 
-            catch (ArgumentException exeption)
+            catch (ArgumentException exception)
             {
                 phoneTextBox.BackColor = Color.LightSalmon;
             }
@@ -187,7 +187,7 @@ namespace ContactsAppUI
                 idVkTextBox.BackColor = Color.White;
             }
 
-            catch (ArgumentException exeption)
+            catch (ArgumentException exception)
             {
                 idVkTextBox.BackColor = Color.LightSalmon;
             }

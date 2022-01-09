@@ -21,10 +21,7 @@ namespace ContactsApp
         /// </summary>
         public long Number
         {
-            get 
-            {
-                return _number;
-            }
+            get => _number;
             set
             {
                 if (value.ToString().Length != 11 || value.ToString()[0] != '7')

@@ -294,6 +294,7 @@ namespace ContactsAppUI
             this.ContactsListBox.Size = new System.Drawing.Size(400, 349);
             this.ContactsListBox.TabIndex = 17;
             this.ContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactlistBox_SelectedIndexChanged);
+            this.ContactsListBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ContactsListBox_KeyUp);
             // 
             // panel1
             // 
