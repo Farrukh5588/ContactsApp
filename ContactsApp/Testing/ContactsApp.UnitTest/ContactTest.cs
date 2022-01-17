@@ -20,17 +20,17 @@ namespace ContactsApp.UnitTest
             };
             var contact = new Contact
             {
-                Name = "John",
-                Surname = "Smith",
+                Name = "Ivan",
+                Surname = "Ivanov",
                 DateOfBirth = new DateTime(2000,1,1),
                 PhoneNumber = phoneNumber,
-                Email = "white@bk.com",
-                IdVk = "463723"
+                Email = "ivanov@bk.com",
+                IdVk = "226665"
             };
             return contact;
         }
         [Test]
-        public void Name_CorrectName_ReturnsSameName()
+        public void Test_Name_CorrectName_ReturnsSameName()
         {
             //Setup
             var contact = new Contact();
@@ -46,7 +46,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Name_WrongName_ReturnsUpperCaseName()
+        public void Test_Name_WrongName_ReturnsUpperCaseName()
         {
             //Setup
             var contact = new Contact();
@@ -65,7 +65,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Name_EmptyName_ThrowsException()
+        public void Test_Name_EmptyName_ThrowsException()
         {
             //Setup
             var contact = new Contact();
@@ -84,7 +84,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Surname_CorrectSurname_ReturnsSameSurname()
+        public void Test_Surname_CorrectSurname_ReturnsSameSurname()
         {
             //Setup
             var contact = new Contact();
@@ -100,7 +100,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Surname_WrongName_ReturnsUpperCaseName()
+        public void Test_Surname_WrongSurname_ReturnsUpperCaseName()
         {
             //Setup
             var contact = new Contact();
@@ -119,7 +119,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Surname_EmprtyName_ThrowsException()
+        public void Test_Surname_EmprtySurname_ThrowsException()
         {
             //Setup
             var contact = new Contact();
@@ -138,7 +138,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Email_CorrectEmail_ReturnSameEmail()
+        public void Test_Email_CorrectEmail_ReturnSameEmail()
         {
             //Setup
             var contact = new Contact();
@@ -154,7 +154,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Email_TooLongEmail_ThrowsException()
+        public void Test_Email_TooLongEmail_ThrowsException()
         {
             //Setup
             var contact = new Contact();
@@ -173,7 +173,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void IdVk_CorrectIdVk_ReturnSameIdVk()
+        public void Test_IdVk_CorrectIdVk_ReturnSameIdVk()
         {
             //Setup
             var contact = new Contact();
@@ -189,7 +189,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void IdVk_TooLongIdVk_ThrowsException()
+        public void Test_IdVk_TooLongIdVk_ThrowsException()
         {
             //Setup
             var contact = new Contact();
@@ -208,27 +208,27 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void BirthDate_GoodBirthDate_ReturnsSameBirthDate()
+        public void Test_DateOfBirth_CorrectDateOfBirth_ReturnsSameDateOfBirth()
         {
             //Setup
             var contact = new Contact();
-            var sourceBirthDate = DateTime.Today;
-            var expectedBirthDate = sourceBirthDate;
+            var sourceDateOfBirth = DateTime.Today;
+            var expectedDateOfBirth = sourceDateOfBirth;
 
             //Act
-            contact.DateOfBirth = sourceBirthDate;
-            var actualBirthDate = contact.DateOfBirth;
+            contact.DateOfBirth = sourceDateOfBirth;
+            var actualDateOfBirth = contact.DateOfBirth;
 
             //Assert
-            Assert.AreEqual(expectedBirthDate, actualBirthDate);
+            Assert.AreEqual(expectedDateOfBirth, actualDateOfBirth);
         }
 
         [Test]
-        public void BirthDate_OutOfRangeBirthDate_ThrowsException()
+        public void Test_DateOfBirth_OutOfRangeDateOfBirth_ThrowsException()
         {
             //Setup
             var contact = new Contact();
-            var sourceBirthDate = new DateTime(2222, 1, 1);
+            var sourceDateOfBirth = new DateTime(2222, 1, 1);
 
             //Assert
             Assert.Throws<ArgumentException>
@@ -236,17 +236,17 @@ namespace ContactsApp.UnitTest
                 () =>
                 {
                     //Act
-                    contact.DateOfBirth = sourceBirthDate;
+                    contact.DateOfBirth = sourceDateOfBirth;
                 }
             );
         }
 
         [Test]
-        public void Birthday_TooSmallBirthday_ThrowsException()
+        public void Test_DateOfBirth_TooSmallDateOfBirth_ThrowsException()
         {
             //Setup
             var contact = new Contact();
-            var sourceBirthday = new DateTime(1800, 1, 1);
+            var sourceDateOfBirth = new DateTime(1800, 1, 1);
 
             //Assert
             Assert.Throws<ArgumentException>
@@ -255,13 +255,13 @@ namespace ContactsApp.UnitTest
 
                 {
                     //Act
-                    contact.DateOfBirth = sourceBirthday;
+                    contact.DateOfBirth = sourceDateOfBirth;
                 }
             );
         }
 
         [Test]
-        public void Clone_GoodClone_ReturnsSameObject()
+        public void Test_Clone_CorrectClone_ReturnsSameObject()
         {
             //Setup
             var expectedContact = PrepareContact();

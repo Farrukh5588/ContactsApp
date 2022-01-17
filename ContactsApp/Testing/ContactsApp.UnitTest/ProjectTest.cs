@@ -10,7 +10,7 @@ namespace ContactsApp.UnitTest
     class ProjectTest
     {
         [Test]
-        public void Project_CreateProject_ReturnRegulatedProject()
+        public void Test_Project_CreateProject_ReturnRegulatedProject()
         {
             //Setup
             var sourceNumber = 71234567891;

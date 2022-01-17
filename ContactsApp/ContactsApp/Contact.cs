@@ -172,6 +172,7 @@ namespace ContactsApp
                 PhoneNumber = phoneNumber
             };
         }
+
         public override bool Equals(object obj)
         {
             var toCompareWith = obj as Contact;

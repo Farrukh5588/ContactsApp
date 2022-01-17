@@ -18,9 +18,9 @@ namespace ContactsApp.UnitTest
 
             sourceProject.Contacts.Add(new Contact()
             {
-                Surname = "Пчелкин",
-                Name = "Иван",
-                DateOfBirth = new DateTime(2020, 12, 7, 23, 55, 17),
+                Surname = "Ivanov",
+                Name = "Ivan",
+                DateOfBirth = new DateTime(2021, 12, 7, 23, 55, 17),
                 PhoneNumber = new PhoneNumber()
                 {
                     Number = 78901234567
@@ -32,9 +32,9 @@ namespace ContactsApp.UnitTest
 
             sourceProject.Contacts.Add(new Contact()
             {
-                Surname = "Пупкин",
-                Name = "Вася",
-                DateOfBirth = new DateTime(2020, 12, 7, 23, 55, 17),
+                Surname = "Sergachev",
+                Name = "Mikhail",
+                DateOfBirth = new DateTime(2021, 12, 7, 23, 55, 17),
                 PhoneNumber = new PhoneNumber()
                 {
                     Number = 78891234321
@@ -45,16 +45,9 @@ namespace ContactsApp.UnitTest
             );
             return sourceProject;
         }
-        /// <summary>
-        /// Тест на сериализацию 
-        /// </summary>
        
-        
-        /// <summary>
-        /// Когда неправильный файл (путь), возвращаем пустой проджект
-        /// </summary>
         [Test]
-        public void LoadFromFile_UnCorrectFile_ReturnEmptyProject()
+        public void Test_LoadFromFile_UnCorrectFile_ReturnEmptyProject()
         {
             //Setup
             var location = Assembly.GetExecutingAssembly().Location;
@@ -67,7 +60,7 @@ namespace ContactsApp.UnitTest
             Assert.IsEmpty(actualProject.Contacts);
         }
         [Test]
-        public void SaveToFile_CorrectProject_FileSavedCorrectly()
+        public void Test_SaveToFile_CorrectProject_FileSavedCorrectly()
         {
             //Setup
             var sourceProject = PrepareProject();
@@ -93,7 +86,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void SaveToFile_CreateFolder_FolderIsExist()
+        public void Test_SaveToFile_CreateFolder_FolderIsExist()
         {
             //Setup
             var project = PrepareProject();
@@ -113,7 +106,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void LoadFromFile_CorrectProject_FileLoadedCorrectly()
+        public void Test_LoadFromFile_CorrectProject_FileLoadedCorrectly()
         {
             //Setup
             var expectedProject = PrepareProject();
@@ -128,7 +121,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void LoadFromFile_UnCorrectPath_ReturnEmptyProject()
+        public void Test_LoadFromFile_UnCorrectPath_ReturnEmptyProject()
         {
             //Setup
             var testFileName = Common.DataFolderForTest() + "wrong";
@@ -141,7 +134,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void FilePath_GoodFilePath_ReturnSamePath()
+        public void Test_FilePath_CorrectFilePath_ReturnSamePath()
         {
             //Setup
             var expectedPath = Common.FilePath();
@@ -154,7 +147,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void DirectoryPath_GoodDirectoryPath_ReturnSameDirectory()
+        public void Test_DirectoryPath_CorrectDirectoryPath_ReturnSameDirectory()
         {
             //Setup
             var expectedPath = Common.DirectoryPath();

@@ -9,9 +9,8 @@ namespace ContactsApp.UnitTest
 {
     class PhoneNumberTest
     {
-
         [Test]
-        public void PhoneNumber_GoodPhoneNumber_ReturnsSamePhoneNumber()
+        public void Test_PhoneNumber_CorrectPhoneNumber_ReturnsSamePhoneNumber()
         {
             //Setup
             var sourcePhoneNumber = 79998889988;
@@ -27,12 +26,11 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void PhoneNumber_WrongPhoneNumberBegin_ThrowsException()
+        public void Test_PhoneNumber_WrongPhoneNumber_ThrowsException()
         {
             //Setup
             var phoneNumber = new PhoneNumber();
             var sourceNumber = 998998887788;
-
 
             //Assert
             Assert.Throws<ArgumentException>
@@ -46,7 +44,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void PhoneNumber_TooLongPhoneNumber_ThrowsException()
+        public void Test_PhoneNumber_TooLongPhoneNumber_ThrowsException()
         {
             //Setup
             var phoneNumber = new PhoneNumber();
