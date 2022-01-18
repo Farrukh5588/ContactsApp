@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace ContactsApp.UnitTest
 {
-    class ProjectTest
+    public class ProjectTest
     {
         [Test]
         public void Test_Project_CreateProject_ReturnRegulatedProject()

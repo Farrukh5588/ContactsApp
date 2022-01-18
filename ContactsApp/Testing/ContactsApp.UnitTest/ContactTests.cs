@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 namespace ContactsApp.UnitTest
 {
     [TestFixture]
-    public class ContactTest
+    public class ContactTests
     {
         public Contact PrepareContact()
         {

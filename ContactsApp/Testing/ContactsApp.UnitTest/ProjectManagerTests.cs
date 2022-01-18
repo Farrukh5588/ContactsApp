@@ -10,7 +10,7 @@ using System.Reflection;
 
 namespace ContactsApp.UnitTest
 {
-    class ProjectManagerTest
+   public class ProjectManagerTests
     {
         public Project PrepareProject()
         {
@@ -20,7 +20,7 @@ namespace ContactsApp.UnitTest
             {
                 Surname = "Ivanov",
                 Name = "Ivan",
-                DateOfBirth = new DateTime(2021, 12, 7, 23, 55, 17),
+                DateOfBirth = new DateTime(2021, 12, 7),
                 PhoneNumber = new PhoneNumber()
                 {
                     Number = 78901234567
@@ -34,7 +34,7 @@ namespace ContactsApp.UnitTest
             {
                 Surname = "Sergachev",
                 Name = "Mikhail",
-                DateOfBirth = new DateTime(2021, 12, 7, 23, 55, 17),
+                DateOfBirth = new DateTime(2021, 12, 7),
                 PhoneNumber = new PhoneNumber()
                 {
                     Number = 78891234321
@@ -51,7 +51,7 @@ namespace ContactsApp.UnitTest
         {
             //Setup
             var location = Assembly.GetExecutingAssembly().Location;
-            var testDataFolder = Path.GetDirectoryName(location) + @"\wrong\";
+            var testDataFolder = Path.GetDirectoryName(location) + @"\WrongFile.json";
 
             //Act
             var actualProject = ProjectManager.LoadFromFile(testDataFolder);
@@ -73,7 +73,7 @@ namespace ContactsApp.UnitTest
             }
 
             //Act
-            ProjectManager.SaveToFile(sourceProject, expectedFileName, testDataFolder);
+
             ProjectManager.SaveToFile(sourceProject, actualFileName, testDataFolder);
 
             var isFileExist = File.Exists(actualFileName);
@@ -124,7 +124,7 @@ namespace ContactsApp.UnitTest
         public void Test_LoadFromFile_UnCorrectPath_ReturnEmptyProject()
         {
             //Setup
-            var testFileName = Common.DataFolderForTest() + "wrong";
+            var testFileName = Common.DataFolderForTest() +  "wrong";
 
             //Act
             var actualProject = ProjectManager.LoadFromFile(testFileName);

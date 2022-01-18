@@ -7,7 +7,7 @@ using NUnit.Framework;
 
 namespace ContactsApp.UnitTest
 {
-    class PhoneNumberTest
+    public class PhoneNumberTests
     {
         [Test]
         public void Test_PhoneNumber_CorrectPhoneNumber_ReturnsSamePhoneNumber()
