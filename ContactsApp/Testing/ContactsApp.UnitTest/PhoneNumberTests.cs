@@ -22,7 +22,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Test_PhoneNumber_WrongPhoneNumber_ThrowsException()
+        public void Test_PhoneNumber_InitialPhoneNumberNot7_ThrowsException()
         {
             //Setup
             var phoneNumber = new PhoneNumber();
