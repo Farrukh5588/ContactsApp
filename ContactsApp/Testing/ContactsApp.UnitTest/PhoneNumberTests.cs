@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace ContactsApp.UnitTest
@@ -26,7 +22,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Test_PhoneNumber_WrongPhoneNumber_ThrowsException()
+        public void Test_PhoneNumber_InitialPhoneNumberNot7_ThrowsException()
         {
             //Setup
             var phoneNumber = new PhoneNumber();

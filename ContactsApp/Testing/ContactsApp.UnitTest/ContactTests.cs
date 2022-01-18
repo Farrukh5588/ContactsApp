@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
-using Newtonsoft.Json;
 
 namespace ContactsApp.UnitTest
 {
     [TestFixture]
     public class ContactTests
     {
-        public Contact PrepareContact()
+        private Contact PrepareContact()
         {
             var sourceNumber = 79996196969;
             var phoneNumber = new PhoneNumber
@@ -29,12 +28,13 @@ namespace ContactsApp.UnitTest
             };
             return contact;
         }
+
         [Test]
         public void Test_Name_CorrectName_ReturnsSameName()
         {
             //Setup
             var contact = new Contact();
-            var sourceName = "123456789";
+            var sourceName = "Farrukh";
             var expectedName = sourceName;
 
             //Act
@@ -50,7 +50,23 @@ namespace ContactsApp.UnitTest
         {
             //Setup
             var contact = new Contact();
-            var sourceName = "qwertyuiop qwertyuiop qwertyuiop qwertyuiop qwertyuiop ";
+            const string sourceName = "farrukh";
+            const string expectedName = "Farrukh";
+
+            //Act
+            contact.Name = sourceName;
+            var actualName = contact.Name;
+
+            //Assert
+            Assert.AreEqual(expectedName, actualName);
+        }
+
+        [Test]
+        public void Test_Name_LongName_ThrowsException()
+        {
+            //Setup
+            var contact = new Contact();
+            var sourceName = "123456789 123456789 123456789 123456789 123456789 1";
   
             //Assert
             Assert.Throws<ArgumentException>
@@ -104,7 +120,23 @@ namespace ContactsApp.UnitTest
         {
             //Setup
             var contact = new Contact();
-            var sourceSurname = "qwertyuiop qwertyuiop qwertyuiop qwertyuiop qwertyuiop ";
+            const string sourceSurname = "rakhimov";
+            const string expectedSurname = "Rakhimov";
+
+            //Act
+            contact.Surname = sourceSurname;
+            var actualSurname = contact.Surname;
+
+            //Assert
+            Assert.AreEqual(expectedSurname, actualSurname);
+        }
+
+        [Test]
+        public void Test_Surname_LongSurname_ThrowsException()
+        {
+            //Setup
+            var contact = new Contact();
+            var sourceSurname = "123456789 123456789 123456789 123456789 123456789 1";
            
             //Assert
             Assert.Throws<ArgumentException>
@@ -119,7 +151,7 @@ namespace ContactsApp.UnitTest
         }
 
         [Test]
-        public void Test_Surname_EmprtySurname_ThrowsException()
+        public void Test_Surname_EmptySurname_ThrowsException()
         {
             //Setup
             var contact = new Contact();
@@ -158,7 +190,7 @@ namespace ContactsApp.UnitTest
         {
             //Setup
             var contact = new Contact();
-            var sourceEmail = "123456789 123456789 123456789 123456789 123456789 123456";
+            var sourceEmail = "RakhimovRakhimovRakhimovRakhimovRakhimov1@gmail.com";
 
             //Assert
             Assert.Throws<ArgumentException>
@@ -193,7 +225,7 @@ namespace ContactsApp.UnitTest
         {
             //Setup
             var contact = new Contact();
-            var sourceIdVk = "qwertyuiop qwertyuiop qwertyuiop";
+            var sourceIdVk = "123456789 123456789 123456789 1";
 
             //Assert
             Assert.Throws<ArgumentException>
