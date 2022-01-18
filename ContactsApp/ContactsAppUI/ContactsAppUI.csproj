@@ -183,9 +183,9 @@ md "$(SolutionDir)Installer\InstallScripts\Release"
 
 md "$(SolutionDir)Installer\InstallScripts\Installers"
 
-xcopy "$(ProjectDir)$(OutDir)Newtonsoft.Json.dll" "$(SolutionDir)Installer\InstallScripts\Release\"
-
 xcopy "$(ProjectDir)$(OutDir)ContactsApp.dll" "$(SolutionDir)Installer\InstallScripts\Release\"
+
+xcopy "$(ProjectDir)$(OutDir)Newtonsoft.Json.dll" "$(SolutionDir)Installer\InstallScripts\Release\"
 
 xcopy "$(ProjectDir)$(OutDir)ContactsAppUI.exe" "$(SolutionDir)Installer\InstallScripts\Release\"
 </PostBuildEvent>
