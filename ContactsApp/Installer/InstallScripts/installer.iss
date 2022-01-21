@@ -9,7 +9,7 @@
 #define MyAppAssocName MyAppName + " File"
 #define MyAppAssocExt ".myp"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
-#define AppIconName "contact_book_contacts_notebook_icon_124667.ico"
+#define AppIconName "contact_book_32x32.ico"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
